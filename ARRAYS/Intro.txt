@@ -1,0 +1,2 @@
+maximum size of an array we can initialize inside int main is :- 10@6
+but globally we can :-10@7
