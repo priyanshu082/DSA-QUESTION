@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
- using namespace std;
+
+using namespace std;
 
 
 int* Sorting(int arr[],int n){
