@@ -45,11 +45,11 @@ void mergeTwoSortedArraysWithoutExtraSpace(vector<long long> &a,
       }
 	  //arr2 and arr2
      else if (left >=n) {
-		  SwapGreater (a,  b, left-n, right-n);
+		  SwapGreater (b,  b, left-n, right-n);
       }
 	  //arr1 and arr1
       else {
-		  SwapGreater (a, b, left, right);
+		  SwapGreater (a, a, left, right);
       }
 	  right++,left++;
     }
