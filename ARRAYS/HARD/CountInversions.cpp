@@ -15,7 +15,7 @@ int numberOfInversions(vector<int>&a, int n) {
 
 
 //optimal appraoch
-int sorting(int arr[],int low,int mid,int high){
+int sorting(vector<int>& arr,int low,int mid,int high){
     vector<int> temp;
     int cnt=0;
     int left=low;
@@ -27,7 +27,7 @@ int sorting(int arr[],int low,int mid,int high){
         }
         else{
             temp.push_back(arr[right]);
-cnt++;
+            cnt+=(mid-left+1);
             right++;
         }
     }
@@ -46,7 +46,7 @@ cnt++;
     return cnt;
 }
 
-int merge_sort(int arr[],int low, int high){
+int merge_sort(vector<int>& arr,int low, int high){
     int cnt=0;
     if(low==high) return cnt;
     int mid=(low+high)/2;
@@ -54,6 +54,12 @@ int merge_sort(int arr[],int low, int high){
     cnt+=merge_sort(arr,mid+1,high);
     cnt+=sorting(arr,low,mid,high);
     return cnt;
+}
+
+
+
+int numberOfInversions(vector<int>&a, int n) {
+    return merge_sort(a,0,n-1);
 }
 
 
