@@ -7,8 +7,6 @@ using namespace std;
 
 //other way is to use next_permutation stl which is in built in c++
 //and writting the code of that STL.
-class Solution {
-public:
         void revArr( vector<int>& nums,int start,int end){
           while(start<end){
               int temp=nums[start];
@@ -49,7 +47,7 @@ public:
         }
        
     }
-};
+
 
 
 

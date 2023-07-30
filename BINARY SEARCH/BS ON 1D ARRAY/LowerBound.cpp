@@ -27,6 +27,13 @@ int lowerBound(vector<int> arr, int n, int x) {
 
 }
 
+//c++ stl method
+// int lowerBound(vector<int> arr, int n, int x) {
+  
+//   int lb=lowerBound(arr.begin(), arr.end(), x)-arr.begin();
+//   return lb;
+// }
+
 
 int main(){
 
