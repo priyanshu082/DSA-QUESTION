@@ -21,7 +21,7 @@ pair<int, int> firstAndLastPosition(vector<int>& nums, int n, int target)
             while (j > 0 && nums[j - 1] == nums[j]) j--;
             vec.first = j;
             vec.second = i;
-            return vec;
+            break;
         } else if (nums[mid] > target) {
             high = mid - 1;
         } else {
