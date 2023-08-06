@@ -27,7 +27,7 @@ public:
     }
 };
 
-//optimal appraoch is 
+//optimal appraoch is by using binary exponentiation algorithm
 class Solution {
 public:
     double myPow(double x, int n) {
@@ -50,6 +50,7 @@ public:
         return n < 0 ? 1 / result : result;
     }
 };
+
 
 
 int main(){
