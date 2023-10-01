@@ -67,5 +67,6 @@
         "concepts": "cpp",
         "algorithm": "cpp",
         "random": "cpp"
-    }
+    },
+    "C_Cpp.errorSquiggles": "enabled"
 }
