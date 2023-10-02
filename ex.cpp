@@ -2,17 +2,12 @@
 
 using namespace std;
 
-void change(int *ptr){
-    *ptr=*ptr+10;
-}
-
 int main(){
 
-    int a =5;
-    int *ptr =&a;
-    cout<<a<<endl;
-    cout<<*ptr<<endl;
-    change(ptr);
-    cout<<a<<endl;
+  int num=123;
+  string str=to_string(num);
+  cout<<str[1]<<endl;
+  cout<<str[2]<<endl;
+  return 0;
     
 }
