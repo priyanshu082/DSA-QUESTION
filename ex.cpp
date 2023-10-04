@@ -2,12 +2,18 @@
 
 using namespace std;
 
+void solve(int* p){
+  *p=*p+5;
+  
+}
+
 int main(){
 
-  int num=123;
-  string str=to_string(num);
-  cout<<str[1]<<endl;
-  cout<<str[2]<<endl;
+  int a=5;
+  
+  solve(&a);
+  cout<<a<<endl;
+
   return 0;
     
 }

@@ -23,8 +23,8 @@ int compress(vector<char>& chars) {
                 }
             }
         }
-        chars.resize(j);
-        return chars.size();
+       
+        return j;
     }
 
 int main(){
