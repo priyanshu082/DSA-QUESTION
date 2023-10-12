@@ -1,1 +1,0 @@
- cout<<"Thank you for using the program!!"<<endl;
