@@ -5,14 +5,12 @@ int partition(int arr[],int low,int high){
       int pivot =arr[low];
       int i=low;
       int j=high;
-      while(i<j){
-         while(arr[i]<=pivot && i<=high-1){
-        i++;
-      }
-      while(arr[j]>pivot && i>=low+1){
-        j--;
-      }
-      if(i<j){
+      while(i<j)
+      {
+     while(arr[i]<=pivot && i<=high-1) i++;
+     while(arr[j]>pivot && i>=low+1) j--;
+      if(i<j)
+      {
         int temp=arr[j];
         arr[j]=arr[i];
         arr[i]=temp;
@@ -20,7 +18,6 @@ int partition(int arr[],int low,int high){
       }
       swap(arr[low],arr[j]);
       return j;
-     
 }
 
 void quick_sort(int arr[],int low,int high){
