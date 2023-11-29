@@ -31,12 +31,12 @@ class BT{
     }
 
 
-    void PreOrder(Node * root){
+    void InOrder(Node * root){
         if(root==nullptr) return ;
 
+     InOrder(root->left);
      cout<<root->data<<" ";
-     PreOrder(root->left);
-     PreOrder(root->right);
+     InOrder(root->right);
     }
 
     public:
@@ -46,8 +46,8 @@ class BT{
         root=insert(root ,key);
     }
 
-    void PreOrder(){
-        PreOrder(root);
+    void InOrder(){
+        InOrder(root);
     }
 
     
@@ -68,5 +68,5 @@ int main(){
     tree.insert(8);
     tree.insert(7);
     
-    tree.PreOrder();
+    tree.InOrder();
 }
