@@ -15,7 +15,7 @@ class BST{
     private:
 
     Node* root;
-    Node* insert(Node* root,int key){{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{
+    Node* insert(Node* root,int key){
         if(root==nullptr) return new Node(key);
 
         else if(key>root->key) root->right=insert(root->right,key);
@@ -23,7 +23,7 @@ class BST{
         else if(key<root->key) root->left=insert(root->left,key);
 
         return root;
-    }}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}
+    }
     
     public:
 

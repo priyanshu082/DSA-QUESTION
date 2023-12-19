@@ -1,3 +1,4 @@
+package JAVA;
 abstract class Animal{
     abstract void walk();
 }  
