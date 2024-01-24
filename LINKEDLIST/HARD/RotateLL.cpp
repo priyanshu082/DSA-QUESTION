@@ -38,6 +38,41 @@ public:
     }
 };
 
+
+class Solution2 {
+public:
+    ListNode* rotateRight(ListNode* head, int k) {
+        if(!head || !head->next ) return head;
+         ListNode * temp=head;
+        ListNode * end=head;
+        ListNode * prev1=head;
+        ListNode * prev2=head;
+        int cnt=0;
+        int size=1;
+
+        while(end->next){
+            size++;
+            end=end->next;
+        }
+
+        k=k%size;
+        if(k==0) return head;
+  
+           
+                while(cnt<(size-k)){
+                    prev2=prev1;
+                    prev1=prev1->next;
+                    cnt++;
+                }
+          
+        end->next=temp;   
+        prev2->next=NULL;
+        head=prev1;
+
+        
+        return head;
+    }
+};
 int main(){
 
     return 0;
