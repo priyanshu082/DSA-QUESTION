@@ -13,7 +13,7 @@ void sorting(int arr[],int low,int mid,int high){
     while(left<=mid) temp.push_back(arr[left++]); //entering the remaining data of left 
       
     while(right<=high) temp.push_back(arr[right++]); //entering the remaining data of right 
-       
+    
     for(int i=low;i<=high;i++) arr[i]=temp[i-low]; //copying the sorted data from temp to array
 }
 
