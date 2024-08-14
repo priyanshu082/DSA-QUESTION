@@ -1,5 +1,5 @@
 #include <iostream>
-#include<vector>
+#include <vector>
 
 using namespace std;
 
@@ -18,11 +18,12 @@ int main()
         adj[v][u] = 1;
     }
 
-    //method 2 
-    vector<int> a[n+1];
-    for(int i=0;i<m;i++){
-        int u,v;
-        cin>>u >>v ;
+    // method 2
+    vector<int> a[n + 1];
+    for (int i = 0; i < m; i++)
+    {
+        int u, v;
+        cin >> u >> v;
         a[u].push_back(v);
     }
 
