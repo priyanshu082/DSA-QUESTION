@@ -17,9 +17,11 @@ class Knapsack{
     int n;
     int capacity;
     vector<Items> items;
-
+    vector<vector<int>> dp;
     public:
-    Knapsack(int c, int n): capacity(c),n(n){};
+    Knapsack(int c, int n): capacity(c),n(n){
+         dp = vector<vector<int>>(n, vector<int>(capacity + 1, -1));
+    };
 
     void addItem(int w,int v){
         items.emplace_back(w,v);
@@ -27,11 +29,13 @@ class Knapsack{
 
     int getMaxProfit(int cap, int index){
         if(index<0) return 0;
+        if(dp[index][cap]!=-1) return dp[index][cap];
       int select=0+getMaxProfit(cap,index-1);
       int notSelect=INT16_MIN;
       if(cap>items[index].weight){
         notSelect=items[index].value+getMaxProfit(cap-items[index].weight,index-1);
       }
+      dp[index][cap]=max(select,notSelect);
       return max(select,notSelect);
     }
 
@@ -39,7 +43,9 @@ class Knapsack{
         if(n==1){
             if(capacity>=items[0].weight){
                 return items[0].value;
-                }
+            }else{
+                return 0;
+            }
         }
         return getMaxProfit(capacity,n-1);
     }
