@@ -169,15 +169,20 @@ public class KnapsackGUI {
         frame.add(valueInput);
 
         JButton addButton = new JButton("Add Item");
-        addButton.setBounds(10, 130, 150, 25);
+        addButton.setBounds(10, 130, 100, 25);
         frame.add(addButton);
+        
 
-        JButton calculateButton = new JButton("KnapSack 0/1");
-        calculateButton.setBounds(160, 130, 200, 25);
+        JButton deleteButton = new JButton("Delete All");
+        deleteButton.setBounds(130, 130, 100, 25);
+        frame.add(deleteButton);
+
+        JButton calculateButton = new JButton(" 0-1 KnapSack");
+        calculateButton.setBounds(250, 130, 150, 25);
         frame.add(calculateButton);
 
         JButton fractionalButton = new JButton("Fractional Knapsack");
-        fractionalButton.setBounds(370, 130, 250, 25);
+        fractionalButton.setBounds(450, 130, 150, 25);
         frame.add(fractionalButton);
 
         JTextArea itemsArea = new JTextArea();
@@ -192,31 +197,58 @@ public class KnapsackGUI {
         stepsScrollPane.setBounds(10, 270, 750, 450);
         frame.add(stepsScrollPane);
 
+        
         addButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                String nText = nInput.getText();
+                if (nText.isBlank() || Integer.parseInt(nText) <= 0) {
+                    JOptionPane.showMessageDialog(frame, "Please set the number of items (n) to a value greater than 0.", "Input Error", JOptionPane.ERROR_MESSAGE);
+                    return;
+                }
+        
                 if (knapsack == null) {
                     int n = Integer.parseInt(nInput.getText());
                     int capacity = Integer.parseInt(capacityInput.getText());
                     knapsack = new Knapsack(capacity, n);
                 }
-
+        
                 int weight = Integer.parseInt(weightInput.getText());
                 int value = Integer.parseInt(valueInput.getText());
                 knapsack.addItem(weight, value);
                 itemCount++;
-
+        
                 // Reset fields
                 weightInput.setText("");
                 valueInput.setText("");
-
+        
                 // Display the items added so far
                 itemsArea.append("Item " + itemCount + ": Weight = " + weight + ", Value = " + value + "\n");
-
+        
                 if (itemCount == Integer.parseInt(nInput.getText())) {
                     addButton.setEnabled(false);
                 }
             }
+        });
+        
+
+        
+        
+        deleteButton.addActionListener(new ActionListener () {
+            @Override 
+            public void actionPerformed(ActionEvent e){
+                nInput.setText("");
+                capacityInput.setText("");
+                weightInput.setText("");
+                valueInput.setText("");
+                itemsArea.setText("");
+                stepsArea.setText("");
+                knapsack = null;
+                itemCount = 0;
+                addButton.setEnabled(true);
+            }
+
+            
         });
 
         calculateButton.addActionListener(new ActionListener() {
