@@ -2,56 +2,35 @@
 #include<vector>
 using namespace std;
 
-class Solution {
-  private: 
-    void dfs(int node, vector<int> adj[], vector<int> vis, vector<int> &ls) {
-        vis[node] = 1; 
-        ls.push_back(node); 
-        // traverse all its neighbours
-        for(auto it : adj[node]) {
-            // if the neighbour is not visited
-            if(!vis[it]) {
-                dfs(it, adj, vis, ls); 
-            }
+void dfs(int node, vector<int> adj[], vector<int> &vis, vector<int> &ans){
+    vis[node]=1;
+    ans.push_back(node);
+    for(auto it:adj[node]){
+        if(!vis[it]){
+            dfs(it,adj,vis,ans);
         }
     }
-  public:
-
-    vector<int> dfsOfGraph(int V, vector<int> adj[]) {
-        //any constant number
-         vector<int> vis(V,0);  //!!!!!!******____just use V here____***********!!!!!
-        int start = 0;
-        //create a list to store dfs
-        vector<int> ls; 
-        //call dfs for starting node
-        dfs(start, adj, vis, ls); 
-        return ls; 
-    }
-};
-
-void addEdge(vector <int> adj[], int u, int v) {
-    adj[u].push_back(v);
-    adj[v].push_back(u);
 }
 
-void printAns(vector <int> &ans) {
-    for (int i = 0; i < ans.size(); i++) {
-        cout << ans[i] << " ";
+int main(){
+    int n, m;
+    cout<<"Enter the number of vertices and edges :"<<endl;
+    cin>>n>>m;
+
+    vector<int> adj[n+1];
+    for(int i=0 ;i<n;i++){
+        int u,v;
+        cin>>u>>v;
+        adj[u].push_back(v);
+        adj[v].push_back(u);
     }
-}
 
-int main() 
-{
-    vector <int> adj[5];
-    
-    addEdge(adj, 0, 2);
-    addEdge(adj, 2, 4);
-    addEdge(adj, 0, 1);
-    addEdge(adj, 0, 3);
-
-    Solution obj;
-    vector <int> ans = obj.dfsOfGraph(5, adj);
-    printAns(ans);
-
-    return 0;
+    //dfs
+    vector<int> ans;
+    vector<int> vis(n+1,0);
+    for(int i = 1;i<=n;i++){
+        if(!vis[i]){
+            dfs(i,adj,vis,ans);
+        }
+    }
 }
