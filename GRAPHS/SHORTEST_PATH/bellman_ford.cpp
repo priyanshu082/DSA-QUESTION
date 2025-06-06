@@ -25,7 +25,7 @@ class Solution {
         // vector<int> adj(V);
         vector<int> dist(V,1e8);
         dist[src]=0;
-        for(int i =0;i<V;i++){
+        for(int i=0;i<V;i++){
             for(auto it : edges){
                 int u=it[0];
                 int v=it[1];

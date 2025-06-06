@@ -14,7 +14,7 @@ class Solution {
         q.push(0);
         vector<int> bfs;
         // iterate till the queue is empty 
-        while (!q.empty()) {
+        while(!q.empty()) {
             // get the topmost element in the queue 
             int node = q.front(); 
             q.pop(); 

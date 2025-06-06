@@ -13,7 +13,7 @@ using namespace std;
             int come_from=q.front().second;
             q.pop();
             for (auto it: adj[node]){
-                if( !vis[it] ) {
+                if(!vis[it] ) {
                     vis[it]=1;
                     q.push({it,node});
                 }  else if(come_from != it) return true;
