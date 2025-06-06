@@ -25,6 +25,7 @@ class Queue{
         rear++;
         arr[rear]= data;
     }
+    
     void dequeue(){
         if(front==-1){
             cout<<"Queue is Empty"<<endl;
