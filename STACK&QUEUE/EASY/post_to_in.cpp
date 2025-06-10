@@ -13,10 +13,8 @@ class Solution {
                 string temp(1, s[i]);
                 st.push(temp);
             }else{
-                string t1=st.top();
-                st.pop();
-                string t2=st.top();
-                st.pop();
+                string t1=st.top();st.pop();
+                string t2=st.top();st.pop();
                 string temp="("+t2+s[i]+t1+")";
                 st.push(temp);
             }
