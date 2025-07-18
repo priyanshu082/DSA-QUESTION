@@ -19,7 +19,7 @@ int main(){
         int u,v,w;
         cin>>u>>v>>w;
         dist[u][v] = min(dist[u][v], (long long)w);
-dist[v][u] = min(dist[v][u], (long long)w);
+        dist[v][u] = min(dist[v][u], (long long)w);
     }
 
     vector<pair<int,int>> query;
