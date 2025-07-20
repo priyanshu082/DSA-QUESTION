@@ -6,6 +6,7 @@
 using namespace std;
 
 const long long INF = numeric_limits<long long>::max();
+
 int main(){
     int n,m;
     cin>>n>>m;
