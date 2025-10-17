@@ -32,10 +32,8 @@ int main(){
         q.pop();
         order.push_back(node);
         for(auto it : adj[node]){
-            
-                indegree[it]--;
-                if(indegree[it]==0) q.push(it);
-            
+            indegree[it]--;
+            if(indegree[it]==0) q.push(it);
         }
     }
 

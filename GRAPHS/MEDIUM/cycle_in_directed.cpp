@@ -25,7 +25,7 @@ class Solution {
         int n =adj.size();
         vector<int> vis(n,0);
         vector<int> path(n,0);
-        for(int i =0;i<n;i++){
+        for(int i=0;i<n;i++){
             if(!vis[i]){
                 if(dfs(i,adj,vis,path)) return true;
             } 

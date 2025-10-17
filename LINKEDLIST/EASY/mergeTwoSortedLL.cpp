@@ -22,12 +22,10 @@ public:
             int data1=list1->val;
             int data2=list2->val;
             if(data1>data2){
-                
                 newList->next=list2;
                 newList=list2;
                 list2=list2->next;
             } else{
-                
                 newList->next=list1;
                 newList=list1;
                 list1=list1->next;
@@ -40,7 +38,6 @@ public:
                 list1=list1->next;
         }
         while(list2){
-                
                 newList->next=list2;
                 newList=list2;
                 list2=list2->next;
