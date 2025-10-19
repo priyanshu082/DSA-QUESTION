@@ -24,12 +24,7 @@ int main()
                 ans=max(ans,fuel);
             }else break;
         }
-
-        
-        
         ans=max(ans,2*(k-nums[i-1]));
-        
-
         cout<<ans<<endl;
 
     }
