@@ -20,11 +20,7 @@ int main() {
             cin>> val;
             ans+=val;
 
-        } 
-        
-
-       
-
+        }
          cout << -1*ans << endl;
     }
     return 0;
